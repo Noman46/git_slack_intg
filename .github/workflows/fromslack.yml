@@ -2,7 +2,7 @@ name: from slack
 env:
   REPO_OWNER: Noman46
   REPO_NAME: git_slack_intg
-  GITHUB_TOKEN: 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
+  GITHUB_TOKEN: Bearer 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
 on:
   repository_dispatch:
     types: [from_slack]
