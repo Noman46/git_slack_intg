@@ -1,0 +1,17 @@
+name: from slack
+env:
+  REPO_OWNER: Noman
+  REPO_NAME: git_slack_intg
+  GITHUB_TOKEN: ${{ secrets.TOKEN }}
+on:
+  repository_dispatch:
+    types: [run-ping]
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install packages
+        run: npm ci
+      - name: Run Ping
+        run: npm run ping
